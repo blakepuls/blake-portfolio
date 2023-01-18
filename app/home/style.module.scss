@@ -1,0 +1,94 @@
+@import '../../styles/theme.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+    // padding: 3em;
+    flex: 1;
+    width: 100%;
+}
+
+.intro {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 3em;
+}
+
+.about {
+    // width: 100%;
+    font-size: 1.5rem;
+
+    p {
+        max-width: 1000px;
+    }
+}
+
+.skills {
+    // max-width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    .stack {
+        display: flex;
+        gap: 2em;
+        position: relative;
+        padding: 0em 0.1em 0.5em 0.1em;
+        overflow-x: auto;
+    }
+}
+
+.projects {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    max-width: 2100px;
+    gap: 3em
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+@media (max-width: 2000px) {
+    // .intro {
+    //     flex-direction: column;
+    // }
+
+    // .about {
+    //     height: 300px;
+    // }
+
+    .skills {
+        display: flex;
+        overflow-y: auto;
+        max-width: 100%;
+
+        // grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1200px) {
+    .intro {
+        flex-direction: column;
+    }
+
+    .about {
+        max-width: 100%;
+        font-size: 1rem;
+    }
+}

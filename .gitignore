@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# prisma migration
+/prisma/migrations
+
 # testing
 /coverage
 

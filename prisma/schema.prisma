@@ -1,0 +1,59 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://portfolio:&61hY%hY8w4$@10.0.0.75:5432/portfolio"
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  username String
+  password String
+}
+
+model About {
+  id      Int    @id @default(autoincrement())
+  github  String
+  linkedin String
+  name    String
+  title   String
+  content String
+  image   String
+}
+
+model Project {
+  id          Int        @id @default(autoincrement())
+  title       String
+  description String
+  tech        String[]
+  source      String
+  post        String
+  image       String
+}
+
+model Post {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  title     String
+  content   String
+  image     String
+}
+
+model Skill {
+  id    Int        @id @default(autoincrement())
+  title String
+  items SkillItem[]
+}
+
+model SkillItem {
+  id        Int      @id @default(autoincrement())
+  name      String
+  image     String
+  skillId   Int
+  skill     Skill     @relation(fields: [skillId], references: [id])
+}

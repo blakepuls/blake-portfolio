@@ -1,0 +1,9 @@
+@import '../../styles/theme';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: darken($background, 5%);
+    width: 365px;
+    height: 300px;
+}

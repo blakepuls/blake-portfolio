@@ -1,0 +1,128 @@
+@import '../styles/theme.scss';
+
+.animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400vh;
+    background-color: darken($background, 7.5%);
+    z-index: -2;
+}
+
+.vignette {
+    // background: linear-gradient(180deg, transparent, darken($background, 5%));
+    // height: 300px;
+    // width: 100%;
+    // position: fixed;
+    // bottom: 0;
+    // z-index: -1;
+}
+
+.header {
+    top: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    width: 100%;
+    padding: 15px;
+    border: 0px;
+    background: rgba(darken($background, 5%), 0.90);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+    .nav {
+        //Push the rest of the content to the right
+        flex: 1;
+        font-size: 2.5rem;
+        padding: 0;
+        margin: 0;
+        transition: all 0.2s ease 0s;
+
+        .link {
+            transition: all 0.2s ease 0s;
+
+            &:hover {
+                transition: all 0.2s ease 0s;
+                cursor: pointer;
+                color: $accent;
+            }
+        }
+    }
+
+    .icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        transition: all 0.2s ease 0s;
+
+        &:hover {
+            cursor: pointer;
+            color: $accent;
+        }
+    }
+
+    .name {
+        margin-right: auto;
+        font-size: 2rem;
+    }
+
+    .github {
+        color: white;
+        width: 40px;
+        height: 40px;
+    }
+
+
+}
+
+.controls {
+    z-index: 1000;
+    position: fixed;
+    top: 8em;
+    right: 3em;
+}    
+
+.main {
+    margin-top: 3em;
+    // margin: 5em 5em 0 5em;
+    z-index: 2;
+}
+
+@media (max-width: 2000px) {
+    .main {
+        margin: 5em 0em 0 0em;
+    }
+}
+
+
+
+.blog {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    // background-color: lighten($background, 5%);
+    background-color: $accent;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    height: 50px;
+    width: 150px;
+    margin: 15px;
+    bottom: 0;
+    left: 0;
+    font-size: 1.1rem;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+        background-color: $accent;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        transform: translateY(2px);
+    }
+
+    &:active {
+        box-shadow: none;
+        transform: translateY(4px);
+    }
+}

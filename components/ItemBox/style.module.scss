@@ -1,0 +1,39 @@
+@import '../../styles/theme.scss';
+
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 1em;
+    align-self: center;
+    margin-top: 10px;
+
+    .item {
+        background: $accent;
+        background-size: 150% 220%;
+        animation: gradient-animation 5s ease infinite;
+        padding: 5px;
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            background: none;
+            background-color: #FF5555;
+            scale: 1.1;
+        }
+    }
+
+    .new {
+        color: white;
+        height: 32.5px;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            background: none;
+            color: $accent;
+            scale: 1.1;
+        }
+    }
+}
