@@ -23,3 +23,16 @@ The website features a unique background animation that is made from scratch usi
 
 ## How to run the project locally
 To run the project locally, you will need to have Node.js and npm (or yarn) installed on your machine. Once you have cloned the repository, navigate to the project folder and run the following commands:
+
+```
+npm install
+npm start
+```
+
+This will install all the required dependencies and start the development server. The website will be available at http://localhost:3000.
+
+## Contributing
+If you would like to contribute to the development of this website, feel free to fork the repository and submit a pull request. Suggestions or improvements are welcome.
+
+## License
+This project is licensed under the MIT License.
