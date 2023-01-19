@@ -1,11 +1,9 @@
 "use client";
 
 import { useState } from 'react';
-import useViewport from '../../hooks/useViewport';
 import style from './style.module.scss';
 
 export default function Collapsible(props: Partial<{children: React.ReactNode[], width: number, className: string}>) {
-    const { width } = useViewport();
     const [current, setCurrent] = useState(0);
 
     if(!props.children) return null;
