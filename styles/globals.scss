@@ -103,3 +103,15 @@ button {
   align-items: center;
   gap: 3em;
 }
+
+@media (max-width: 950px) {
+  .page {
+    padding-top: 5em;
+    padding-inline: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+  }
+}

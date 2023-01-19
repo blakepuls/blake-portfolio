@@ -31,32 +31,37 @@ export default function Controls(props: { className: string, config: any, onChan
     return (
         <div
             className={`${style.container} ${props.className}`}
-            style={open ? {height: 'auto'} : {height: '175px', width: '175px', borderRadius: '50%'}}
-            
             >
+            
             <div className={style.header} onClick={toggleMenu}>
                 <Canvas color='#FFF' className={style.canvas}>
                     <ambientLight />
                     <Cube 
                         config={{
-                            scale: 1,
+                            scale: 0.55,
                             color: '#550bc5',
                             rotation: 0.01,
                             reverse: false,
-                            position: [0, 0, 3],
+                            position: [0, 0.80, 3],
                             range: 1,
                             speed: 0,
                         }}
                     />
                 </Canvas>
             </div>
+
+            <div 
+                className={style.menu}
+                style={open ? {height: 'auto'} : {height: '0', width: '0', padding: '0'}}
+                >
+                <Slider label='Speed' value={speed} onChange={setSpeed}/>
+                <Slider label='Rotation' value={rotation} onChange={setRotation}/>
+                <Slider label='Amount' value={amount} max={1000} onChange={setAmount}/>
+                <Slider label='Range' value={range} onChange={setRange}/>
+                <Slider label='Min Scale' value={minScale} onChange={setMinScale}/>
+                <Slider label='Max Scale' value={maxScale} onChange={setMaxScale}/>
+            </div>
             
-            <Slider label='Speed' value={speed} onChange={setSpeed}/>
-            <Slider label='Rotation' value={rotation} onChange={setRotation}/>
-            <Slider label='Amount' value={amount} max={1000} onChange={setAmount}/>
-            <Slider label='Range' value={range} onChange={setRange}/>
-            <Slider label='Min Scale' value={minScale} onChange={setMinScale}/>
-            <Slider label='Max Scale' value={maxScale} onChange={setMaxScale}/>
         </div>
     )
 }

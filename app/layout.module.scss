@@ -23,10 +23,11 @@
     top: 0;
     position: fixed;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     z-index: 1000;
     width: 100%;
-    padding: 15px;
+    padding: 0.5em;
     border: 0px;
     background: rgba(darken($background, 5%), 0.90);
     backdrop-filter: blur(5px);
@@ -34,13 +35,10 @@
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 
     .nav {
-        //Push the rest of the content to the right
-        flex: 1;
         font-size: 2.5rem;
-        padding: 0;
+        padding-inline: 5px;
         margin: 0;
         transition: all 0.2s ease 0s;
-
         .link {
             transition: all 0.2s ease 0s;
 
@@ -65,7 +63,7 @@
     }
 
     .name {
-        margin-right: auto;
+        // margin-right: auto;
         font-size: 2rem;
     }
 
@@ -79,11 +77,13 @@
 }
 
 .controls {
-    z-index: 1000;
-    position: fixed;
-    top: 8em;
-    right: 3em;
-}    
+    // z-index: 1000;
+    // top: 0.5em;
+    // position: fixed;
+    // left: 50%;
+    // transform: translateX(-50%);
+
+}
 
 .main {
     margin-top: 3em;

@@ -56,19 +56,20 @@ export default function RootLayout({
             }
           </div>
 
+          <Controls config={cubesConfig} onChange={setCubesConfig} className={style.controls}/>
+          
           {about && (
-            <>
+            <div className='socials'>
               <Link className={style.link}  href={about?.github}>
                 <GitHub className={style.icon}/>
               </Link>
               <Link className={style.link} href={about?.linkedin}>
                 <Linkedin className={style.icon}/>
               </Link>
-            </>
+            </div>
           )}
         </div>
 
-        <Controls config={cubesConfig} onChange={setCubesConfig} className={style.controls}/>
 
         <div className={style.main}>
           {children} 
