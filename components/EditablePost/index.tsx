@@ -22,10 +22,10 @@ export default function EditablePost(props: EditablePostProps) {
     const [posts, setPosts] = useState<Post[]>([]);
     const [post, setPost] = useState<Post>({
         id: -1,
-        createdAt: undefined,
         title: '',
         content: '',
         image: '',
+        createdAt: undefined,
     })
 
 
@@ -37,28 +37,49 @@ export default function EditablePost(props: EditablePostProps) {
         setPosts(await getPosts(''));
     }
 
+    const reset = () => {
+        if (titleRef.current) {
+            titleRef.current.value = '';
+        }
+
+        if (contentRef.current) {
+            contentRef.current.value = '';
+        }
+
+        setPost({
+            id: -1,
+            title: '',
+            content: '',
+            image: '',
+            createdAt: undefined,
+        });
+    }
+
     const create = async () => {
-        createPost('', {
+        await createPost('', {
             title: post.title,
             content: post.content,
             image: post.image,
         });
          
         setPosts(await getPosts(''));
+        reset();
     }
 
     const save = async () => {
-        updatePost('', post);
+        await updatePost('', post);
         setPosts(await getPosts(''));
+        reset();
     }
 
-    const test = async () => {
-        console.log(post)
+    const del = async (_post: Post) => {
+        await deletePost('', _post.id);
+        reset();
+        onLoad();
     }
 
     return (
         <div className={style.container}>
-            {/* <button className={style.post} onClick={test}>Test</button> */}
             <div className={style.posts}>
                 <div className={style['new-post']} onClick={() => {
                     setPost({
@@ -97,8 +118,7 @@ export default function EditablePost(props: EditablePostProps) {
                         <div className={style.fade}></div>
                         <div className={style.controls}>
                             <Trash className={style.icon} onClick={() => {
-                                deletePost('', _post.id);
-                                onLoad();
+                                del(_post);
                             }} />
                         </div>
                     </div>
