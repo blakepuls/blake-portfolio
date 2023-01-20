@@ -11,7 +11,7 @@ import AboutEditor from '../../components/AboutEditor';
 import SkillsEditor from '../../components/SkillsEditor';
 
 export default function page() {
-    const [token, setToken] = useState('');
+    const [loggedIn, setLoggedIn] = useState(false);
     const [projects, setProjects] = useState<any>([]);
 
     useEffect(() => {
@@ -19,7 +19,7 @@ export default function page() {
     }, []);
 
     const onLoad = async () => {
-        const projects = await getProjects(token);
+        const projects = await getProjects('');
         setProjects(projects);
     }
 
@@ -37,8 +37,8 @@ export default function page() {
         setProjects(newProjects);
     }
 
-    if(!token) 
-        return <LoginForm setToken={setToken} />;
+    if(!loggedIn) 
+        return <LoginForm setLoggedIn={setLoggedIn} />;
 
     return (
         <div className='page'>

@@ -1,48 +1,40 @@
-'use client'
-
 import { Dispatch, SetStateAction, useState, useEffect, CSSProperties } from 'react';
+import { getCookie, setCookie, deleteCookie } from 'cookies-next';
 import style from './style.module.scss';
+import { OptionsType } from 'cookies-next/lib/types';
 
-export default function LoginForm(props: {setToken: Dispatch<SetStateAction<string>>}) {
+export default function LoginForm(props: {setLoggedIn: Dispatch<SetStateAction<boolean>>}) {
     const [userExists, setUserExists] = useState(true);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [loginFailed, setLoginFailed] = useState(false);
+    const options: OptionsType = {
+        secure: true,
+        httpOnly: true,
+    }
 
     useEffect(() => {
         onRefresh();
     }, []);
 
-    // Check if user exists, then check if token stored in local storage is valid
+    // Check if user exists, then check if token stored in cookies is valid
     const onRefresh = async () => {
         const user = await fetch('/api/user/');
         setUserExists(user.status === 200);
 
-        //No user exists, so no need to check token
+        // No user exists, so no need to check token
         if(user.status != 200) 
             return;
-        
-        const token = localStorage.getItem('token');
-        if(!token) 
-            return
 
         const res = await fetch('/api/user/verify', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                token: token
-            })
+            }
         });
 
-        if(res.status != 200) {
-            props.setToken('');
-            localStorage.removeItem('token');
-            return
-        }
-
-        props.setToken(token);
+        if(res.status == 200)
+            props.setLoggedIn(true);
     }
     
     // Create user if it doesn't exist, then login
@@ -77,12 +69,12 @@ export default function LoginForm(props: {setToken: Dispatch<SetStateAction<stri
         // Successful login
         if(res.status == 200) {
             const data = await res.json();
-            props.setToken(data.token);
-            localStorage.setItem('token', data.token);
+            props.setLoggedIn(true);
             return
         }
 
         // Login failed
+        props.setLoggedIn(false);
         setLoginFailed(true);
         setTimeout(() => {
             setLoginFailed(false);
