@@ -1,12 +1,12 @@
 import { Prisma } from '@prisma/client';
 
-export async function getSkills(token: string) {
+export async function getSkills() {
     const response = await fetch('/api/skills');
     const skills = await response.json();
     return skills;
 }
 
-export async function updateSkills(token: string, skillData: Prisma.SkillUpdateInput) {
+export async function updateSkills(skillData: Prisma.SkillUpdateInput) {
     const response = await fetch('/api/skills', {
         method: 'PUT',
         headers: {
@@ -19,7 +19,7 @@ export async function updateSkills(token: string, skillData: Prisma.SkillUpdateI
     return updatedSkills;
 }
 
-export async function createSkill(token: string, skillData: Prisma.SkillCreateInput) {
+export async function createSkill(skillData: Prisma.SkillCreateInput) {
     const response = await fetch('/api/skills', {
         method: 'POST',
         headers: {
@@ -32,7 +32,7 @@ export async function createSkill(token: string, skillData: Prisma.SkillCreateIn
     return createdSkill;
 }
 
-export async function deleteSkill(token: string, id: number) {
+export async function deleteSkill(id: number) {
     const response = await fetch(`/api/skills/`, {
         method: 'DELETE',
         headers: {
@@ -45,7 +45,7 @@ export async function deleteSkill(token: string, id: number) {
     return deletedSkill;
 }
 
-export async function deleteSkillItem(token: string, id: number) {
+export async function deleteSkillItem(id: number) {
     const response = await fetch(`/api/skills/items/${id}`, {
         method: 'DELETE',
     });
@@ -54,7 +54,7 @@ export async function deleteSkillItem(token: string, id: number) {
     return deletedSkillItem;
 }
 
-export async function createSkillItem(token: string, skillId: number, skillItemData: Prisma.SkillItemCreateInput) {
+export async function createSkillItem(skillId: number, skillItemData: Prisma.SkillItemCreateInput) {
     const response = await fetch(`/api/skills/${skillId}/items`, {
         method: 'POST',
         headers: {

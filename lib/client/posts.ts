@@ -1,12 +1,12 @@
 import { Prisma } from '@prisma/client';
 
-export async function getPosts(token: string) {
+export async function getPosts() {
     const response = await fetch('/api/posts');
     const posts = await response.json();
     return posts;
 }
 
-export async function updatePost(token: string, post: Prisma.PostUpdateInput) {
+export async function updatePost(post: Prisma.PostUpdateInput) {
     const response = await fetch('/api/posts', {
         method: 'PUT',
         headers: {
@@ -19,7 +19,7 @@ export async function updatePost(token: string, post: Prisma.PostUpdateInput) {
     return updatedPost;
 }
 
-export async function createPost(token: string, post: Prisma.PostCreateInput) {
+export async function createPost(post: Prisma.PostCreateInput) {
     const response = await fetch('/api/posts', {
         method: 'POST',
         headers: {
@@ -32,7 +32,7 @@ export async function createPost(token: string, post: Prisma.PostCreateInput) {
     return createdPost;
 }
 
-export async function deletePost(token: string, id: number) {
+export async function deletePost(id: number) {
     const response = await fetch(`/api/posts`, {
         method: 'DELETE',
         headers: {

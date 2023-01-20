@@ -19,7 +19,7 @@ export default function page() {
     }, []);
 
     const onLoad = async () => {
-        setPosts(await getPosts(''));
+        setPosts(await getPosts());
     }
 
     return (

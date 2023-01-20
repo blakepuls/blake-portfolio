@@ -19,7 +19,7 @@ export default function page() {
     }, []);
 
     const onLoad = async () => {
-        const projects = await getProjects('');
+        const projects = await getProjects();
         setProjects(projects);
     }
 

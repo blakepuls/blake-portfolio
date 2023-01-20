@@ -31,7 +31,7 @@ export default function RootLayout({
   }, []);
 
   const onLoad = async () => {
-    const _about = await getAbout('');
+    const _about = await getAbout();
     if (_about) {
       setAbout(_about);
     }

@@ -30,10 +30,10 @@ export default function EditableProject(props: { project: Project, editing?: boo
     const save = () => {
         if(project.id == -1) {
             project.id = undefined;
-            createProject('', project as Prisma.ProjectCreateInput);
+            createProject(project as Prisma.ProjectCreateInput);
         }
         else
-            updateProject('', project);
+            updateProject(project);
 
         setEditing(false); 
     }
@@ -41,7 +41,7 @@ export default function EditableProject(props: { project: Project, editing?: boo
     const del = () => {
         props.onDelete && props.onDelete();
         if(project.id != -1) 
-            project.id && deleteProject('', project.id);
+            project.id && deleteProject(project.id);
     }
 
     if (!editing)

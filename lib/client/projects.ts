@@ -1,12 +1,12 @@
 import { Prisma } from '@prisma/client';
 
-export async function getProjects(token: string) {
+export async function getProjects() {
     const response = await fetch('/api/projects');
     const projects = await response.json();
     return projects;
 }
 
-export async function updateProject(token: string, project: Prisma.ProjectUpdateInput) {
+export async function updateProject(project: Prisma.ProjectUpdateInput) {
     const response = await fetch('/api/projects', {
         method: 'PUT',
         headers: {
@@ -19,7 +19,7 @@ export async function updateProject(token: string, project: Prisma.ProjectUpdate
     return updatedProject;
 }
 
-export async function createProject(token: string, project: Prisma.ProjectCreateInput) {
+export async function createProject(project: Prisma.ProjectCreateInput) {
     const response = await fetch('/api/projects', {
         method: 'POST',
         headers: {
@@ -32,7 +32,7 @@ export async function createProject(token: string, project: Prisma.ProjectCreate
     return createdProject;
 }
 
-export async function deleteProject(token: string, id: number) {
+export async function deleteProject(id: number) {
     const response = await fetch(`/api/projects`, {
         method: 'DELETE',
         headers: {

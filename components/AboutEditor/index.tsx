@@ -23,7 +23,7 @@ export default function AboutEditor(props: AboutEditorPostProps) {
     }, []);
 
     const onLoad = async () => {
-        const _about = await getAbout('');
+        const _about = await getAbout();
         if (_about) {
             setName(_about.name);
             setTitle(_about.title);
@@ -35,11 +35,11 @@ export default function AboutEditor(props: AboutEditorPostProps) {
     }
 
     const save = async () => {
-        const _about = await getAbout('');
+        const _about = await getAbout();
         if (_about) {
-            await updateAbout('', { name, title, image, linkedin: linkedIn, github, content: about });
+            await updateAbout({ name, title, image, linkedin: linkedIn, github, content: about });
         } else {
-            await createAbout('', { name, title, image, linkedin: linkedIn, github, content: about });
+            await createAbout({ name, title, image, linkedin: linkedIn, github, content: about });
         }
     }
 

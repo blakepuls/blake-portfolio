@@ -13,7 +13,7 @@ export default function SkillsEditor () {
     }, []);
 
     const onLoad = async () => {
-        const skills = await getSkills('');
+        const skills = await getSkills();
         setSkills(skills);
     }
 
@@ -22,12 +22,12 @@ export default function SkillsEditor () {
 
         if(!title) return;
 
-        createSkill('', {title: title});
+        createSkill({title: title});
         setSkills([...skills, {title: title}]);
     }
 
     const removeSkill = (skill: any) => {
-        deleteSkill('', skill.id);
+        deleteSkill(skill.id);
         setSkills(skills.filter(s => s.id !== skill.id));
     }
 
@@ -37,7 +37,7 @@ export default function SkillsEditor () {
 
         if(!name || !image) return;
 
-        createSkillItem('', skill.id, {
+        createSkillItem(skill.id, {
             name: name,
             image: image,
             skill: {
@@ -49,7 +49,7 @@ export default function SkillsEditor () {
     }
 
     const removeItem = (item: any) => {
-        deleteSkillItem('', item.id);
+        deleteSkillItem(item.id);
 
         const newSkills = skills.map(skill => {
             if(skill.id === item.skillId) {

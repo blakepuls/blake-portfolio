@@ -34,7 +34,7 @@ export default function EditablePost(props: EditablePostProps) {
     }, []);
 
     const onLoad = async () => {
-        setPosts(await getPosts(''));
+        setPosts(await getPosts());
     }
 
     const reset = () => {
@@ -56,24 +56,24 @@ export default function EditablePost(props: EditablePostProps) {
     }
 
     const create = async () => {
-        await createPost('', {
+        await createPost({
             title: post.title,
             content: post.content,
             image: post.image,
         });
          
-        setPosts(await getPosts(''));
+        setPosts(await getPosts());
         reset();
     }
 
     const save = async () => {
-        await updatePost('', post);
-        setPosts(await getPosts(''));
+        await updatePost(post);
+        setPosts(await getPosts());
         reset();
     }
 
     const del = async (_post: Post) => {
-        await deletePost('', _post.id);
+        await deletePost(_post.id);
         reset();
         onLoad();
     }
