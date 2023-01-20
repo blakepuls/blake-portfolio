@@ -20,9 +20,9 @@ export default async function page() {
             <div className={style.intro}>
                 <div className={style.about}>
                     <br/>
-                    <Profile about={about}/>
+                        <Profile about={about}/>
                     <p>
-                        {about?.content}
+                        Test {about?.content}
                     </p>
                 </div>
                 <div className={style.skills}>
