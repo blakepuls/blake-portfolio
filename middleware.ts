@@ -7,12 +7,12 @@ export const config = {
 };
 
 export async function middleware(request: NextRequest) {
-    //If it's a GET request, don't check for token
+    //If it's a GET request, don't check for token. All GET requests are public
     if (request.method == 'GET')
         return NextResponse.next()
     
     //If it's /api/user/verify or /api/user/login, don't check for token
-    if (request.nextUrl.pathname == '/api/user/verify' || request.nextUrl.pathname == '/api/user/login')
+    if (request.nextUrl.pathname.startsWith('/api/user'))
         return NextResponse.next()
     
     const res = await fetch('http://localhost:3000/api/user/verify', {
