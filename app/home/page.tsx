@@ -22,7 +22,7 @@ export default async function page() {
                     <br/>
                         <Profile about={about}/>
                     <p>
-                        Test {about?.content}
+                        {about?.content}
                     </p>
                 </div>
                 <div className={style.skills}>
