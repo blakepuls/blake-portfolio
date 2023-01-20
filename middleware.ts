@@ -28,4 +28,7 @@ export async function middleware(request: NextRequest) {
             JSON.stringify({ success: false, message: 'authentication failed' }),
             { status: 401, headers: { 'content-type': 'application/json' } }
         )
+
+    //Valid token, allow access
+    return NextResponse.next()
 }
