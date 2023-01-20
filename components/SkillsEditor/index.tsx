@@ -23,6 +23,7 @@ export default function SkillsEditor () {
         if(!title) return;
 
         createSkill('', {title: title});
+        setSkills([...skills, {title: title}]);
     }
 
     const removeSkill = (skill: any) => {

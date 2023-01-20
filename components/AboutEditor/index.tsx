@@ -29,7 +29,7 @@ export default function AboutEditor(props: AboutEditorPostProps) {
             setTitle(_about.title);
             setAbout(_about.content);
             setImage(_about.image);
-            setLinkedIn(_about.linkedIn);
+            setLinkedIn(_about.linkedin);
             setGithub(_about.github);
         }
     }
