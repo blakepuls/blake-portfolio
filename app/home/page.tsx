@@ -15,9 +15,13 @@ export default async function page() {
         }
     });
 
+    //order skills by amount of items
+    skills.sort((a, b) => {
+        return b.items.length - a.items.length;
+    })
+
     return (
         <div className='page'>
-            <div className={style.intro}>
                 <div className={style.about}>
                     <br/>
                         <Profile about={about}/>
@@ -29,7 +33,7 @@ export default async function page() {
                     {skills.map(skill => {
                         return (
                             <div className={style.skill}>
-                                <h2>{skill.title}</h2>
+                                <h2 className={style.title}>{skill.title}</h2>
                                 <div className={style.stack}>
                                     {skill.items.map(item => {
                                         return (
@@ -44,6 +48,7 @@ export default async function page() {
                     }
 
                 </div>
+            <div className={style.intro}>
             </div>
 
             <div className={style.projects}>

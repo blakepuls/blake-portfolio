@@ -4,7 +4,7 @@ import Slider from './Slider';
 import { Canvas } from "@react-three/fiber";
 import Cube from '../cube';
 
-export default function Controls(props: { className: string, config: any, onChange: (config: any) => void }) {
+export default function Controls(props: { className?: string, config: any, onChange: (config: any) => void }) {
     const [open, setOpen] = useState(false);
     const [amount, setAmount] = useState(props.config.amount);
 	const [range, setRange] = useState(25)

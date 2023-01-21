@@ -46,7 +46,7 @@ export default function RootLayout({
             {
               pathName === '/home' ? (
                 <Link className={style.link} href='/blog'>
-                  Blog
+                  Visit Blog
                 </Link>
               ) : (
                 <Link className={style.link} href='/home'>
@@ -56,7 +56,9 @@ export default function RootLayout({
             }
           </div>
 
-          <Controls config={cubesConfig} onChange={setCubesConfig} className={style.controls}/>
+          <div className={style.controls}>
+            <Controls config={cubesConfig} onChange={setCubesConfig}/>
+          </div>
           
           {about && (
             <div className='socials'>
