@@ -95,8 +95,8 @@ button {
 }
 
 .page {
-  padding-top: 5em;
-  padding-inline: 3em;
+  padding: 5em;
+  padding-inline: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -106,7 +106,7 @@ button {
 
 @media (max-width: 950px) {
   .page {
-    padding-top: 5em;
+    padding: 5em;
     padding-inline: 1em;
     display: flex;
     flex-direction: column;

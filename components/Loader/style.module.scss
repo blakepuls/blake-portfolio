@@ -17,6 +17,7 @@
     height: 20vw;
     border-radius: 50%;
     background: linear-gradient(45deg, transparent 40%, $accent);
+    mask: radial-gradient(circle, transparent 30%, black 70%);
     animation: move 0.8s linear infinite;
   }
   .loader::before {
@@ -26,7 +27,7 @@
     left: 6px;
     right: 6px;
     bottom: 6px;
-    background: darken($background, 7.5%);
+    background: transparent;
     border-radius: 50%;
     z-index: 2;
   }

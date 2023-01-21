@@ -2,8 +2,8 @@ import style from './style.module.scss';
 import Skill from '../../components/Skill';
 import Profile from '../../components/Profile';
 import Project from '../../components/Project';
-
 import { PrismaClient } from '@prisma/client'
+
 const prisma = new PrismaClient();
 
 export default async function page() {

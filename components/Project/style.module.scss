@@ -53,8 +53,11 @@
         margin-left: auto;
         height: 32.5px;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         // height: 100%;
-        width: 100px;
+        width: 110px;
         font-size: 1.1rem;
         border-radius: 5px;
         border: none;
@@ -75,7 +78,10 @@
         font-size: 1rem;
         color: darken(white, 15%);
         align-self: center;
-        margin-bottom: auto;
+        // margin-bottom: auto;
+        // max-height: 245px;
+        height: 260px;
+        overflow-y: auto;
 
     }
 
@@ -95,6 +101,7 @@
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
+        align-items: center;
         gap: 1em;
         align-self: center;
         margin-top: 10px;
@@ -113,20 +120,17 @@
 }
 
 .private-source {
-    position: relative;
-    float: right;
-    height: 100%;
-
-    .source {
-        color: darken(white, 25%)
-    }
-
-    .lock {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+    transition: all 0.2s ease 0s;
+    position: fixed;
+    background-color: #FF5555;
+    width: 100%;
+    overflow: hidden;
+    height: 150px;
+    border-radius: 5px 5px 5px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 @keyframes gradient-animation {
