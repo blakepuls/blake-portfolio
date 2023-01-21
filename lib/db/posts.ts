@@ -3,7 +3,11 @@ import { Prisma, PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 export async function getPosts() {
-    const posts = await prisma.post.findMany()
+    const posts = await prisma.post.findMany({
+        orderBy: {
+            id: 'desc'
+        }
+    })
     return posts
 }
 

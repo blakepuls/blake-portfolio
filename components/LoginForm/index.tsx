@@ -30,8 +30,10 @@ export default function LoginForm(props: {setLoggedIn: Dispatch<SetStateAction<b
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
-            }
+            },
         });
+
+
 
         if(res.status == 200)
             props.setLoggedIn(true);

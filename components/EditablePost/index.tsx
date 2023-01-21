@@ -114,6 +114,7 @@ export default function EditablePost(props: EditablePostProps) {
                         }
                     }}>
                         <span className={style.title}>{_post.title}</span>
+                        <span className={style.id}>ID: {_post.id}</span>
                         <p>{_post.content}</p>
                         <div className={style.fade}></div>
                         <div className={style.controls}>

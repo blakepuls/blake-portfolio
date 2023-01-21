@@ -3,7 +3,6 @@
 import style from './style.module.scss';
 import ReactMarkdown from 'react-markdown';
 import { Prisma } from '@prisma/client';
-
 interface Post extends Prisma.PostCreateInput {
     id: number;
     createdAt: Date | undefined;
@@ -22,7 +21,7 @@ export default function Post(props: { post: Post }) {
     }
 
     return (
-        <div className={style['container']}>
+        <div className={style['container']} id={`post-${props.post.id}`}>
             <div className={style.header}>
                 <span className={style.title}>{props.post.title || 'Title'}</span>
                 <span className={style.date}>{getDateString(props.post.createdAt || new Date())}</span>

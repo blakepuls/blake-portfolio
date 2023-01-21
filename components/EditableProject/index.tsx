@@ -2,7 +2,7 @@
 
 import style from "./style.module.scss";
 import { useState, useEffect } from "react";
-import { Save, Edit, Trash } from "react-feather";
+import { Save, Edit, Trash, Camera } from "react-feather";
 import { Prisma } from "@prisma/client";
 import ItemBox from "../ItemBox";
 import Project from "../Project";
@@ -26,6 +26,13 @@ export default function EditableProject(props: { project: Project, editing?: boo
     useEffect(() => {
         setProject({ ...project, tech: techs });
     }, [techs]);
+
+    useEffect(() => {
+        setProject({
+            ...project, 
+            post: '/blog/' + project.title.replaceAll(' ', '-').toLowerCase() 
+        });
+    }, [project.title]);
 
     const save = () => {
         if(project.id == -1) {
@@ -60,14 +67,11 @@ export default function EditableProject(props: { project: Project, editing?: boo
         <div className={style.container}>
             <div className={style.project}>
                 <div className={style.top}>
-                    <input
+                    <img 
                         className={style.image}
-                        placeholder="Image URL"
-                        value={project.image}
-                        onChange={(e) =>
-                            setProject({ ...project, image: e.target.value })
-                        }
-                        />
+                        src={project.image}
+                    />
+                    <Camera className={style.camera} onClick={() => setProject({ ...project, image: prompt('Image URL') || '' })}/>
                 </div>
                 <div className={style.bottom}>
                     <div className={style.row}>

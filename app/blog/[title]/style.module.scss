@@ -1,0 +1,10 @@
+.posts {
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+
+    gap: 5em;
+    width: 100%;
+}
