@@ -104,9 +104,9 @@ button {
   gap: 3em;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1000px) {
   .page {
-    padding: 5em;
+    padding: 1em;
     padding-inline: 1em;
     display: flex;
     flex-direction: column;

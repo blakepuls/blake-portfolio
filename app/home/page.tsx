@@ -2,6 +2,7 @@ import style from './style.module.scss';
 import Skill from '../../components/Skill';
 import Profile from '../../components/Profile';
 import Project from '../../components/Project';
+import Skills from '../../components/Skills';
 import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient();
@@ -30,27 +31,12 @@ export default async function page() {
                     </p>
                 </div>
                 <div className={style.skills}>
-                    {skills.map(skill => {
-                        return (
-                            <div className={style.skill}>
-                                <h2 className={style.title}>{skill.title}</h2>
-                                <div className={style.stack}>
-                                    {skill.items.map(item => {
-                                        return (
-                                            <Skill name={item.name} image={item.image}/>
-                                        )
-                                    })
-                                    }
-                                </div>
-                            </div>
-                        )
-                    })
-                    }
-
+                    <Skills skills={skills}/>
                 </div>
             <div className={style.intro}>
             </div>
 
+            <h1>Projects</h1>
             <div className={style.projects}>
                 {projects.map(project => {
                     return (
