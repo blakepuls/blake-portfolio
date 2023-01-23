@@ -60,9 +60,9 @@
       align-items: center;
 
       .icon {
-        width: 30px;
-        height: 30px;
-        margin-right: 10px;
+        width: 0px;
+        height: 0px;
+        margin-right: 0px;
         transition: all 0.2s ease 0s;
 
         &:hover {
@@ -77,7 +77,6 @@
     width: 40px;
     height: 40px;
     margin-right: 10px;
-    transition: all 0.2s ease 0s;
     transition: all 0.2s ease 0s;
 
     &:hover {
