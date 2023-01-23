@@ -1,20 +1,20 @@
 "use client";
 
-import '../styles/globals.scss'
-import { useState, useEffect } from 'react';
-import { GitHub, Linkedin } from 'react-feather';
-import Link from 'next/link';
-import style from './layout.module.scss'
+import "../styles/globals.scss";
+import { useState, useEffect } from "react";
+import { GitHub, Linkedin, Book, User } from "react-feather";
+import Link from "next/link";
+import style from "./layout.module.scss";
 import FloatingCubes from "../components/FloatingCubes";
-import Controls from '../components/FloatingCubes/Controls';
-import { usePathname } from 'next/navigation'
-import { getAbout } from '../lib/client/about';
+import Controls from "../components/FloatingCubes/Controls";
+import { usePathname } from "next/navigation";
+import { getAbout } from "../lib/client/about";
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
- }) {
+  children: React.ReactNode;
+}) {
   const pathName = usePathname();
   const [about, setAbout] = useState<any>();
   const [cubesConfig, setCubesConfig] = useState({
@@ -23,7 +23,7 @@ export default function RootLayout({
     minScale: 1,
     maxScale: 3,
     speed: 1,
-    rotation: 2
+    rotation: 2,
   });
 
   useEffect(() => {
@@ -35,7 +35,7 @@ export default function RootLayout({
     if (_about) {
       setAbout(_about);
     }
-  }
+  };
 
   return (
     <html>
@@ -43,46 +43,42 @@ export default function RootLayout({
       <body>
         <div className={style.header}>
           <div className={style.nav}>
-            {
-              pathName === '/home' ? (
-                <Link className={style.link} href='/blog'>
-                  Visit Blog
-                </Link>
-              ) : (
-                <Link className={style.link} href='/home'>
-                  Home
-                </Link>
-              )
-            }
+            {pathName === "/home" ? (
+              <Link className={style.link} href="/blog">
+                <Book className={style.icon} />
+                Visit Blog
+              </Link>
+            ) : (
+              <Link className={style.link} href="/home">
+                Home
+              </Link>
+            )}
           </div>
 
           <div className={style.controls}>
-            <Controls config={cubesConfig} onChange={setCubesConfig}/>
+            <Controls config={cubesConfig} onChange={setCubesConfig} />
           </div>
-          
+
           {about && (
-            <div className='socials'>
-              <Link className={style.link}  href={about?.github}>
-                <GitHub className={style.icon}/>
+            <div className={style.socials}>
+              <Link className={style.link} href={about?.github}>
+                <GitHub className={style.icon} />
               </Link>
               <Link className={style.link} href={about?.linkedin}>
-                <Linkedin className={style.icon}/>
+                <Linkedin className={style.icon} />
               </Link>
             </div>
           )}
         </div>
 
-
-        <div className={style.main}>
-          {children} 
-        </div>
+        <div className={style.main}>{children}</div>
 
         <div className={style.animation}>
-            <FloatingCubes background='#000' config={cubesConfig} />
+          <FloatingCubes background="#000" config={cubesConfig} />
         </div>
-        
-        <div className={style.vignette}/>
+
+        <div className={style.vignette} />
       </body>
     </html>
-  )
+  );
 }

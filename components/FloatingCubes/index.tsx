@@ -73,7 +73,7 @@ export default function FloatingCubes(props: { config?: Partial<FloatingCubesCon
 	}
 
     return (
-    	<Canvas color={props.background || "red"}>
+    	<Canvas color={props.background || "transparent"}>
 			{cubes.map((cube) => {
 				return (cube.component)
 			    })
