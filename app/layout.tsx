@@ -45,7 +45,7 @@ export default function RootLayout({
           <div className={style.nav}>
             {pathName === "/home" ? (
               <Link className={style.link} href="/blog">
-                <Book className={style.icon} />
+                {/* <Book className={style.icon} /> */}
                 Visit Blog
               </Link>
             ) : (
