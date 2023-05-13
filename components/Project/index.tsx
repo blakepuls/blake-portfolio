@@ -45,6 +45,7 @@ export default function Project(props: { project: Project }) {
             </Link>
           )}
         </div>
+
         <p className={style.description}>{props.project.description}</p>
         <div>
           <span className={style.title}>Project</span>
