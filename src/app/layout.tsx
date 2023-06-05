@@ -1,10 +1,8 @@
-import Name from "@/components/Name";
 import "./globals.css";
-import { Inter } from "next/font/google";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { IconType } from "react-icons";
 import FloatingCubes from "@/components/FloatingCubes";
-import { NavItems } from "./header";
+
 export const metadata = {
   openGraph: {
     title: "Blake Puls",
@@ -59,7 +57,9 @@ export default function RootLayout({
               <span className="text-3xl">Blake Puls</span>
             </div>
             <nav className="flex gap-5 w-full sm:justify-center items-center">
-              <NavItems />
+              <NavItem href="/about" label="about" newTab={false} />
+              <NavItem href="/projects" label="Projects" newTab={false} />
+              <NavItem href="/blog" label="Blog" newTab={false} />
             </nav>
             <nav className="flex items-center w-full justify-end gap-3 ">
               <NavItem
