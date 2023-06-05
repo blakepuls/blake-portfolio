@@ -5,7 +5,7 @@ import { remark } from "remark";
 import fs from "fs";
 import html from "remark-html";
 
-export async function getSortedProjectsData(): Promise<ProjectData[]> {
+async function getSortedProjectsData(): Promise<ProjectData[]> {
   const projectsDirectory = path.join(process.cwd(), "src/projects");
   const fileNames = fs.readdirSync(projectsDirectory);
   const allProjectsData = await Promise.all(
