@@ -59,7 +59,7 @@ export default function RootLayout({
               <span className="text-3xl">Blake Puls</span>
             </div>
             <nav className="flex gap-5 w-full sm:justify-center items-center">
-              <NavItem href="/about" label="About" newTab={false} />
+              <NavItem href="/" label="About" newTab={false} />
               <NavItem href="/projects" label="Projects" newTab={false} />
               <NavItem href="/blog" label="Blog" newTab={false} />
             </nav>

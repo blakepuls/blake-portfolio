@@ -1,5 +1,5 @@
 ---
-title: My Project
+title: Axishop
 thumbnail: /images/projects/axishop.png
 sourceCodeLink: https://github.com/username/myproject
 blogPostLink: /blog/myproject

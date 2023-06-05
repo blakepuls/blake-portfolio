@@ -50,7 +50,7 @@ export default async function Blog() {
       {posts.map((post) => (
         <div
           key={post.id}
-          className="p-3 bg-bg-800 rounded-md shadow-md bg-opacity-50"
+          className="p-3 bg-bg-800 rounded-md shadow-md bg-opacity-50 backdrop-blur-lg"
         >
           <div className="flex w-full">
             <h2 className="text-3xl">{post.title}</h2>
