@@ -16,7 +16,36 @@
   @apply text-primary-600;
 }
 
-ul {
+.markdown h1 {
+  @apply text-3xl font-bold my-4;
+}
+
+.markdown h2 {
+  @apply text-2xl font-semibold my-3;
+}
+
+.markdown h3 {
+  @apply text-xl font-medium my-2;
+}
+
+.markdown img {
+  @apply rounded-md;
+}
+
+.markdown p {
+  @apply text-base my-1 text-gray-300;
+}
+
+.markdown ul,
+.markdown ol {
+  @apply list-disc pl-5;
+}
+
+.markdown li {
+  @apply my-1;
+}
+
+/* ul {
   @apply list-disc;
 }
 
@@ -26,7 +55,7 @@ ol {
 
 li {
   @apply mb-2 ml-6;
-}
+} */
 
 @media (prefers-color-scheme: dark) {
   :root {

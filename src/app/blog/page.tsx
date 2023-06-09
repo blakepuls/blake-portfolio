@@ -53,11 +53,11 @@ export default async function Blog() {
           className="p-3 bg-bg-800 rounded-md shadow-md bg-opacity-50 backdrop-blur-lg"
         >
           <div className="flex w-full">
-            <h2 className="text-3xl">{post.title}</h2>
-            <p className="ml-auto">{post.date}</p>
+            <h2 className="text-3xl ">{post.title}</h2>
+            <p className="ml-auto whitespace-nowrap">{post.date}</p>
           </div>
           <div
-            className="mt-3"
+            className="markdown mt-3"
             dangerouslySetInnerHTML={{ __html: post.contentHtml }}
           />
         </div>
