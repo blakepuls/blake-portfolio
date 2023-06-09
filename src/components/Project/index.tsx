@@ -12,6 +12,7 @@ export type ProjectData = {
   techUsed: string[];
   private: boolean;
   description: string;
+  order: number;
 };
 
 interface ProjectProps {

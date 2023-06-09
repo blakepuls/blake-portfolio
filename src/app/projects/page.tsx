@@ -22,6 +22,9 @@ async function getSortedProjectsData(): Promise<ProjectData[]> {
         .process(matterResult.content);
       const contentHtml = processedContent.toString();
 
+      // set default order value to a large number
+      const order = matterResult.data.order ?? 999;
+
       return {
         id,
         title: matterResult.data.title,
@@ -31,13 +34,13 @@ async function getSortedProjectsData(): Promise<ProjectData[]> {
         techUsed: matterResult.data.techUsed,
         private: matterResult.data.private,
         description: contentHtml,
+        order, // include the order property
       } as ProjectData;
     })
   );
 
-  return allProjectsData.sort((a, b) => {
-    return a.title < b.title ? 1 : -1; // replace with your preferred sorting method
-  });
+  // sort by the order property
+  return allProjectsData.sort((a, b) => a.order - b.order);
 }
 
 export default async function Projects() {
@@ -58,6 +61,7 @@ export default async function Projects() {
               techUsed: post.techUsed,
               private: post.private,
               description: post.description,
+              order: post.order,
             }}
           />
         );

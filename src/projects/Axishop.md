@@ -12,6 +12,7 @@ techUsed:
   - Postgres
   - Prisma
   - Redis
+  - tailwindcss
 ---
 
 Visit the dashboard at [https://axishop.gg](https://axishop.gg)
