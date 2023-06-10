@@ -46,13 +46,13 @@ export default async function Blog() {
   const posts = await getSortedPostsData();
 
   return (
-    <main className="w-full h-full flex flex-col gap-5">
+    <main className="w-full h-full flex flex-col gap-10">
       {posts.map((post) => (
         <div
           key={post.id}
           className="p-3 bg-bg-800 rounded-md shadow-md bg-opacity-50 backdrop-blur-lg"
         >
-          <div className="flex w-full">
+          <div className="flex w-full gap-3">
             <h2 className="text-3xl ">{post.title}</h2>
             <p className="ml-auto whitespace-nowrap">{post.date}</p>
           </div>

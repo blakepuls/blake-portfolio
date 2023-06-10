@@ -12,6 +12,10 @@
   @apply text-primary-500;
 }
 
+.markdown code {
+  @apply bg-bg-950 rounded-md px-1;
+}
+
 .markdown a:hover {
   @apply text-primary-600;
 }
@@ -33,29 +37,17 @@
 }
 
 .markdown p {
-  @apply text-base my-1 text-gray-300;
+  @apply text-base my-1 text-gray-400;
 }
 
 .markdown ul,
 .markdown ol {
-  @apply list-disc pl-5;
+  @apply list-disc pl-5 text-gray-400;
 }
 
 .markdown li {
-  @apply my-1;
+  @apply my-1 text-gray-400;
 }
-
-/* ul {
-  @apply list-disc;
-}
-
-ol {
-  @apply list-decimal;
-}
-
-li {
-  @apply mb-2 ml-6;
-} */
 
 @media (prefers-color-scheme: dark) {
   :root {
