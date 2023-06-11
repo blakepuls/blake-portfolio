@@ -4,13 +4,18 @@ import { IconType } from "react-icons";
 import FloatingCubes from "@/components/FloatingCubes";
 
 export const metadata = {
+  title: "Blake Puls's Portfolio",
+  description:
+    "Explore the portfolio of Blake Puls, a Fullstack Developer fascinated by problem-solving. Follow the path from a humble self-taught coder to the brink of a professional career.",
   openGraph: {
-    title: "Blake Puls",
-    description: "",
+    title: "Blake Puls's Portfolio",
+    description:
+      "Explore the portfolio of Blake Puls, a Fullstack Developer fascinated by problem-solving. Follow the path from a humble self-taught coder to the brink of a professional career.",
     url: "https://blakepuls.dev",
     siteName: "Blake Puls",
     locale: "en-US",
     type: "website",
+    images: ["https://blakepuls.dev/images/profile.gif"],
   },
 };
 
