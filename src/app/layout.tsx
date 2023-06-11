@@ -5,12 +5,10 @@ import FloatingCubes from "@/components/FloatingCubes";
 
 export const metadata = {
   title: "Blake Puls's Portfolio",
-  description:
-    "Explore the portfolio of Blake Puls, a Fullstack Developer fascinated by problem-solving. Follow the path from a humble self-taught coder to the brink of a professional career.",
+  description: "Explore my projects and posts about software development.",
   openGraph: {
     title: "Blake Puls's Portfolio",
-    description:
-      "Explore the portfolio of Blake Puls, a Fullstack Developer fascinated by problem-solving. Follow the path from a humble self-taught coder to the brink of a professional career.",
+    description: "Explore my projects and posts about software development.",
     url: "https://blakepuls.dev",
     siteName: "Blake Puls",
     locale: "en-US",
