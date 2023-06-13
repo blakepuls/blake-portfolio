@@ -56,6 +56,7 @@ export default async function Blog() {
             <h2 className="text-3xl ">{post.title}</h2>
             <p className="ml-auto whitespace-nowrap">{post.date}</p>
           </div>
+
           <div
             className="markdown mt-3"
             dangerouslySetInnerHTML={{ __html: post.contentHtml }}
