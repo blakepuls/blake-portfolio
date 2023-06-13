@@ -53,8 +53,10 @@ export default async function Blog() {
           className="p-3 bg-bg-800 rounded-md shadow-md bg-opacity-50 backdrop-blur-lg"
         >
           <div className="flex w-full gap-3">
-            <h2 className="text-3xl ">{post.title}</h2>
-            <p className="ml-auto whitespace-nowrap">{post.date}</p>
+            <h2 className="text-3xl font-extrabold">{post.title}</h2>
+            <p className="ml-auto whitespace-nowrap font-medium text-gray-400">
+              {post.date}
+            </p>
           </div>
 
           <div

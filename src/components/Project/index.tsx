@@ -65,7 +65,7 @@ export function Project({ project }: ProjectProps) {
         </div>
 
         <div
-          className="markdown overflow-y-auto h-60"
+          className="markdown overflow-y-auto"
           dangerouslySetInnerHTML={{
             __html: project.description,
           }}
@@ -84,21 +84,47 @@ export function Project({ project }: ProjectProps) {
                 break;
             }
 
-            return (
-              <div className="flex justify-center p-1 bg-gradient-to-r from-bg-800  to-bg-700 h-10 rounded-md shadow-md bg-opacity-50 items-center gap-1">
-                <Image
-                  src={`/images/technology/${imgSrc}.svg`}
-                  alt={tech}
-                  width={50}
-                  height={50}
-                  className="rounded-full shadow-md w-8 h-8 "
-                />
-                <span className="text-md text-neutral-200 ">{tech}</span>
-              </div>
-            );
+            return <Tech key={tech} tech={tech} />;
           })}
         </div>
       </div>
+    </div>
+  );
+}
+
+interface TechProps {
+  tech: string;
+}
+
+export function Tech({ tech }: TechProps) {
+  const [showImage, setShowImage] = useState(true);
+
+  let imgSrc = tech;
+
+  switch (tech) {
+    case "C#":
+      imgSrc = "csharp";
+      break;
+    case ".NET":
+      imgSrc = "dotnet";
+      break;
+  }
+
+  return (
+    <div className="flex justify-center p-1 bg-gradient-to-r from-bg-800  to-bg-700 h-10 rounded-md shadow-md bg-opacity-50 items-center gap-1">
+      {showImage && (
+        <Image
+          src={`/images/technology/${imgSrc}.svg`}
+          alt={tech}
+          width={50}
+          height={50}
+          onError={(e) => {
+            setShowImage(false);
+          }}
+          className="rounded-full shadow-md w-8 h-8 "
+        />
+      )}
+      <span className="text-md text-neutral-200 ">{tech}</span>
     </div>
   );
 }

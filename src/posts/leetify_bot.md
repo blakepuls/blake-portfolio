@@ -3,11 +3,11 @@ title: "Automating CS:GO Demo Uploads to Leetify with Puppeteer"
 date: "2023-06-09"
 ---
 
-I'm excited to share a recent project I've been working on for the Karma Gaming community. I've developed a script that automatically uploads CS:GO `.demo` files from a web server to the [Leetify](https://leetify.com/) site.
+I'm excited to share a recent project I've been working on for the Karma Gaming community. I've developed a script that automatically uploads CS:GO `.dem` files from a web server to the [Leetify](https://leetify.com/) site.
 
 ## Project Overview
 
-The script is designed to run automatically after a CS:GO match finishes, uploading the resulting `.demo` file to Leetify. This allows players to easily access and review their matches without having to manually upload each file. You can view the repository here: [https://github.com/blakepuls/Leetify-Bot](https://github.com/blakepuls/Leetify-Bot)
+The script is designed to run automatically after a CS:GO match finishes, uploading the resulting `.dem` file to Leetify. This allows players to easily access and review their matches without having to manually upload each file. You can view the repository here: [https://github.com/blakepuls/Leetify-Bot](https://github.com/blakepuls/Leetify-Bot)
 
 ## Technologies Used
 

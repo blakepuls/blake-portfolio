@@ -7,6 +7,7 @@ private: true
 techUsed:
   - C#
   - .NET
+  - WPF
 ---
 
 (Made for client)
