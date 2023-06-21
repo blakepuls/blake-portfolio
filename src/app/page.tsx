@@ -17,11 +17,15 @@ export default async function Home() {
         <Technology name="JavaScript" />
         <Technology name="React" />
         <Technology name="Next.js" />
+        <Technology name="Express" />
+        <Technology name="tailwindcss" />
         <Technology name="C#" src="csharp" />
         <Technology name=".NET" src="dotnet" />
+        <Technology name="Firebase" />
         <Technology name="MySQL" />
         <Technology name="MongoDB" />
         <Technology name="Postgres" />
+        <Technology name="Redis" />
         <Technology name="Docker" />
       </section>
     </main>
