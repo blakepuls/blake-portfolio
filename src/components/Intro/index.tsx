@@ -15,7 +15,7 @@ export default function Intro() {
         <h1 className="text-2xl w-full  text-neutral-200">
           and I'm a{" "}
           <span className="bg-gradient-to-r from-primary-600 to-primary-500 font-bold text-transparent bg-clip-text whitespace-nowrap">
-            Backend Developer
+            Software Engineer
           </span>
         </h1>
 
