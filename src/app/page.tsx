@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import Generator from "@/components/FloatingCubes/Generator";
 import Intro from "@/components/Intro";
 import Technology from "@/components/Technology";
 
