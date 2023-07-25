@@ -45,7 +45,7 @@ export function Project({ project }: ProjectProps) {
           alt={project.title}
           width={500}
           height={500}
-          className="rounded-md w-full h-52 shadow-md "
+          className="rounded-md w-full h-44 shadow-md "
         />
         <div className="flex items-center w-full">
           <span className="text-3xl mr-auto text-neutral-200">
