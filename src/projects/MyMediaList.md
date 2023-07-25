@@ -1,7 +1,7 @@
 ---
 title: MyMediaList
 thumbnail: /images/projects/mymedialist.png
-sourceCodeLink: https://github.com/blakepuls/mymedialist
+sourceCodeLink: https://github.com/blakepuls/my-media-list
 blogPostLink: /blog/mymedialist
 private: false
 techUsed:
