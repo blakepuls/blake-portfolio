@@ -43,7 +43,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-bg-900">
-        <div className="fixed h-full w-full -z-10">
+        <div className="fixed h-full w-full -z-10 ">
+          <div className="bg-black bg-opacity-50 absolute h-full w-full z-10"></div>
           <FloatingCubes
             background="#000"
             config={{

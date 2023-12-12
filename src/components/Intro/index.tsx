@@ -13,15 +13,15 @@ export default function Intro() {
         </h1>
 
         <h1 className="text-2xl w-full  text-neutral-200">
-          and I'm a{" "}
+          and I'm an{" "}
           <span className="bg-gradient-to-r from-primary-600 to-primary-500 font-bold text-transparent bg-clip-text whitespace-nowrap">
-            Software Engineer
+            IT Professional
           </span>
         </h1>
 
         <section className="flex mr-auto gap-3">
           <a
-            href="https://docs.google.com/document/d/19G-ORwx_Z9F8vRAm8m1zhxv54TfONb3ngSFxQM3pzR4/export?format=pdf"
+            href="https://docs.google.com/document/d/1gj6wUn5BLLsS5FUJmnsgd1IXbXVhms_1LPMMeFSXQ4M/export?format=pdf"
             className="btn-primary h-12 mr-auto mt-auto"
           >
             View Resume

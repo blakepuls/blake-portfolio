@@ -4,11 +4,14 @@ import fs from "fs";
 interface TechnologyProps {
   name: string;
   src?: string;
+  rounded?: boolean;
 }
 
-export default function Technology({ name, src }: TechnologyProps) {
+export default function Technology({ name, src, rounded }: TechnologyProps) {
+  if (rounded === undefined) rounded = true;
+
   return (
-    <div className="flex backdrop-blur-lg justify-center p-3 bg-bg-800 rounded-md shadow-md bg-opacity-50 items-center gap-3">
+    <div className="flex justify-center p-2 items-center gap-3">
       <Image
         src={
           src
@@ -18,7 +21,7 @@ export default function Technology({ name, src }: TechnologyProps) {
         alt={name}
         width={50}
         height={50}
-        className="rounded-full h-16 w-16 "
+        className={`${rounded && `rounded-full`} h-16 w-16`}
       />
       <span className="text-3xl text-neutral-200">{name}</span>
     </div>
